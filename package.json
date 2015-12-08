@@ -1,0 +1,28 @@
+{
+  "name": "trihapi",
+  "version": "1.0.0",
+  "description": "me trying hapi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/verypragmatic/trihapi.git"
+  },
+  "keywords": [
+    "hapi",
+    "javascript",
+    "http"
+  ],
+  "author": "tyler j chrestoff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/verypragmatic/trihapi/issues"
+  },
+  "homepage": "https://github.com/verypragmatic/trihapi#readme",
+  "dependencies": {
+    "hapi": "^11.1.2",
+    "inert": "^3.2.0"
+  }
+}
