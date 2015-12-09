@@ -1,4 +1,5 @@
 var Hapi = require('hapi');
+var Good = require('good');
 
 var server = new Hapi.Server();
 server.connection({ port: 8000 });
@@ -27,6 +28,23 @@ server.register(require('inert'), function (err) {
 });
 
 
-server.start( function () {
-  console.log('Server running at:', server.info.uri);
+server.register({
+  register: Good,
+  options: {
+    reporters: [{
+      reporter: require('good-console'),
+      events: {
+        response: '*',
+        log: '*'
+      }
+    }]
+  }
+}, function (err) {
+  if (err) {
+    throw err;
+  }
+
+  server.start(function () {
+    server.log('info', 'Server running at: ' + server.info.uri);
+  });
 });
