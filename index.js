@@ -12,6 +12,14 @@ server.route({
   }
 });
 
+server.route({
+  method: 'GET',
+  path: '/created',
+  handler: function (request, reply) {
+    reply('I came from a server created ' + ((Date.now() - server.info.created)/1000) + ' seconds ago.' );
+  }
+});
+
 
 server.register(require('inert'), function (err) {
   if (err) {
